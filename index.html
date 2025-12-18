@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Image Picker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="name">Click the button!</h1>
+    <button onclick="randomize()">Randomize</button>
+    <br>
+    <img id="image" src="" alt="Random Image">
+
+    <script>
+        const items = [
+            { name: "Picture One", image: "images/img1.jpg" },
+            { name: "Picture Two", image: "images/img2.jpg" },
+            { name: "Picture Three", image: "images/img3.jpg" },
+            // ...
+            // Add all 24 here
+            { name: "Picture Twenty-Four", image: "images/img24.jpg" }
+        ];
+
+        function randomize() {
+            const randomIndex = Math.floor(Math.random() * items.length);
+            const item = items[randomIndex];
+
+            document.getElementById("name").textContent = item.name;
+            document.getElementById("image").src = item.image;
+        }
+    </script>
+
+</body>
+</html>
